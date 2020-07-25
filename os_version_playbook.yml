@@ -1,0 +1,10 @@
+---
+  - name: getting the version of the os on which the awx is installed
+    hosts: localhost
+    tasks:
+      - name: checking the os version and details
+        command: cat /etc/os-release
+        register: os_version
+      
+      - debug:
+          msg: "{{ os_version }}"
